@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('errors.503');
-});
+
 
 
 
@@ -28,13 +26,12 @@ Route::get('/', function () {
 |
 */
 
-Route::group(['middleware' => ['web']], function () {
-    //
-});
-
 
 Route::group(['middleware' => 'web'], function () {
     Route::auth();
+    Route::get('/', function () {
+    return view('auth.login');
+});
     Route::get('/home', 'HomeController@index');
     Route::get('/notice', 'NoticeController@index');
     Route::get('/진료내역', '진료내역Controller@index');

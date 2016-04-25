@@ -15,15 +15,15 @@
 #--------------------------------------------------------------------------
 #
 
-@servers(['web' => 'aws-seoul-deploy'])
+@servers(['web' => 'GpProject-deploy'])
 
 
 @setup
   $path = [
-    'base' => '/home/deployer/web',
-    'docroot' => '/home/deployer/web/envoy.appkr.kr',
-    'shared' => '/home/deployer/web/shared',
-    'release' => '/home/deployer/web/releases',
+    'base' => '/home/deployer/www',
+    'docroot' => '/home/deployer/www/GpProject',
+    'shared' => '/home/deployer/www/shared',
+    'release' => '/home/deployer/www/releases',
   ];
 
   $required_dirs = [
@@ -33,9 +33,9 @@
   ];
 
   $shared_item = [
-    '/home/deployer/web/shared/.env' => '.env',
-    '/home/deployer/web/shared/storage' => 'storage',
-    '/home/deployer/web/shared/cache' => 'cache',
+    '/home/deployer/www/shared/.env' => '.env',
+    '/home/deployer/www/shared/storage' => 'storage',
+    '/home/deployer/www/shared/cache' => 'cache',
   ];
 
   $distribution = [
@@ -43,7 +43,7 @@
   ];
 
   $git = [
-    'repo' => 'git@github.com:appkr/envoy.git',
+    'repo' => 'git@github.com:nargod/GpProject.git',
   ];
 @endsetup
 
